@@ -1,0 +1,104 @@
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hdest {
+  display: inline-block;
+  background: rgba(0,0,0,0.5);
+-webkit-backdrop-filter: blur(21px);
+backdrop-filter: blur(21px);
+border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 12px;
+  padding: 10px;
+  justify-content: center;
+  color: wheat;
+  font-family: 'Borel', cursive, sans-serif;
+}
+.curfnt{
+  font-family: 'Borel', cursive, sans-serif;
+}
+
+/* offer */
+.ocard {
+  width: 90%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.offer-price {
+  color: #33cc33;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.red-tag {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* divider */
+.fcontainer {
+  display: flex;
+  width: 100%;
+}
+
+.f75{
+  flex: 75%;
+}
+
+.f25 {
+  flex: 25%;
+}
+

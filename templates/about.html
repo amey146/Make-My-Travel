@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About Us
+{% endblock title %}
+
+{% block linker %}
+<link rel="stylesheet" href="/static/css/astyle.css">
+{% endblock linker %}
+
+{% block body %}
+<!-- loading animation -->
+<div id="fill">
+    <div id="loader"></div>
+  </div>
+<div class="aboutus-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="aboutus-image float-left hidden-sm"><img class="rounded" src="/static/logo.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <div class="aboutus-content ">
+                        <h1>about <span>Us</span></h1>
+                        <h4>Travel company</h4>
+                        <p>At MakeMyTravel, we are passionate about creating unforgettable travel experiences for our
+                            valued customers. With years of expertise in the travel industry, we pride ourselves on
+                            offering personalized and hassle-free journeys that cater to every traveler's needs. Our
+                            dedicated team of travel enthusiasts strives to curate exceptional itineraries, handpicking
+                            the finest destinations, accommodations, and activities to ensure a truly remarkable
+                            adventure. Whether you seek a relaxing beach getaway, an adrenaline-fueled adventure, or an
+                            immersive cultural exploration, we are committed to crafting tailor-made trips that exceed
+                            your expectations. Trust MakeMyTravel to be your trusted partner in unlocking the world's
+                            wonders, as we believe that every journey should be a remarkable chapter in your life's
+                            story.</p>
+
+                        <div class="my-5">
+                            <h1>our <span>Footprints</span></h1>
+                            <div class="counter ">
+
+                                <div class="single-counter text-center">
+                                    <h2 class="counter">1500</h2>
+                                    <p>Cities covered via Hotels</p>
+                                </div>
+
+                                <div class="single-counter text-center">
+                                    <h2 class="counter">1000</h2>
+                                    <p>Cities covered via Homestays</p>
+                                </div>
+
+                                <div class="single-counter text-center">
+                                    <h2 class="counter">4/10</h2>
+                                    <p>Fleet Contacts</p>
+                                </div>
+
+                                <div class="single-counter text-center">
+                                    <h2 class="counter">70 Mn.+</h2>
+                                    <p>Active Users</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

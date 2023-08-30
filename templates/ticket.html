@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ticket</title>
+	<link rel="stylesheet" href="/static/css/tstyle.css">
+</head>
+
+<body onload="printTicket()">
+	<div class="boarding-pass">
+		<header>
+			<img src="/static/fjap.png" alt="" srcset="" class="logo">
+			<div class="flight">
+				<small>flight</small>
+				<strong>AL 101</strong>
+			</div>
+		</header>
+		<section class="cities">
+			<div class="city">
+				<small>Roma</small>
+
+				<strong>FCO</strong>
+			</div>
+			<div class="city">
+				<small>Napoli</small>
+
+				<strong>NAP</strong>
+			</div>
+			<div class="airplane">
+				<!-- <use xlink:href="#airplane"></use> -->
+				<img src="/static/flightS.png" alt="" srcset="">
+			</div>
+		</section>
+		<section class="infos">
+			<div class="places">
+				<div class="box">
+					<small>Terminal</small>
+					<strong><em>W</em></strong>
+				</div>
+				<div class="box">
+					<small>Gate</small>
+					<strong><em>C3</em></strong>
+				</div>
+				<div class="box">
+					<small>Seat</small>
+					<strong>14B</strong>
+				</div>
+				<div class="box">
+					<small>Class</small>
+					<strong>E</strong>
+				</div>
+			</div>
+			<div class="times">
+				<div class="box">
+					<small>Boarding</small>
+					<strong>11:05</strong>
+				</div>
+				<div class="box">
+					<small>Departure</small>
+					<strong>11:35</strong>
+				</div>
+				<div class="box">
+					<small>Duration</small>
+					<strong>2:15</strong>
+				</div>
+				<div class="box">
+					<small>Arrival</small>
+					<strong>13:50</strong>
+				</div>
+			</div>
+		</section>
+		<section class="strap">
+			<div class="box">
+				<div class="passenger">
+					<small>passenger</small>
+					<strong>UX DEPOT DOT COM</strong>
+				</div>
+				<div class="date">
+					<small>Date</small>
+					<strong>Mon, 1 Jan 2015</strong>
+				</div>
+			</div>
+			<div class="qrcode">
+				<img style="width: 100px; padding: 15px;"
+					src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=flightdetails" alt="" srcset="">
+			</div>
+		</section>
+	</div>
+	<script>
+		function printTicket() {
+			window.print();
+		}
+	</script>
+</body>
+
+</html>

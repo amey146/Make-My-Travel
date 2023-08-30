@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Details
+{% endblock title %}
+
+{% block linker %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/dstyle.css">
+{% endblock linker %}
+{% block body %}
+<!-- loading animation -->
+<div id="fill">
+    <div id="loader"></div>
+  </div>
+<div class="p-5" style="background-color: #000000; background-image: url({{srci}});">
+    <h1 class="hdest curfnt">
+        {{dtour}}
+    </h1>
+    <h5 class="curfnt" style="color: crimson;">{{days}} Days</h5>
+</div>
+<br>
+<br>
+<div class="fcontainer">
+    <div class="accord f75">
+        <h1>{{dtour}} Itinerary</h1>
+        <ul>
+            {% for idata in ditr %}
+            <li>
+                <input type="checkbox" checked>
+                <i></i>
+                <h2>{{idata.Title}}</h2>
+                <p>{{idata.Description}}</p>
+              </li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+    <div class="f25">
+        <a href="{% url 'flights' %}" role="button" style="text-decoration: none;">
+        <div class="ocard">
+            <div class="original-price">Original Price: ₹{{baseprice}}</div>
+            <div class="offer-price curfnt">Offer Price: ₹{{offerprice}}</div>
+            <div class="red-tag">33.33% off</div>
+            <p>Amminities</p>
+        </div>
+    </a>
+    </div>
+</div>
+
+{% endblock body %}

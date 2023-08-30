@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/fbstyle.css">
+</head>
+
+<body>
+  <form class="flight-form">
+    <h1>Flight Booking</h1>
+    <div id="passenger-list">
+      <div class="passenger">
+        <label for="full-name">Full Name:</label>
+        <input type="text" name="full-name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" required>
+      </div>
+    </div>
+
+    <button type="button" id="add-passenger">Add Passenger</button>
+
+    <label for="departure">Departure Date:</label>
+    <input type="date" name="departure" required>
+
+    <label for="flight-class">Flight Class:</label>
+    <select name="flight-class">
+      <option value="economy">Economy</option>
+      <option value="business">Business</option>
+      <option value="first-class">First Class</option>
+    </select>
+
+    <label for="special-requests">Special Requests:</label>
+    <textarea name="special-requests"></textarea>
+
+    <input type="submit" value="Book Now">
+  </form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        const addPassengerButton = document.getElementById("add-passenger");
+        const passengerList = document.getElementById("passenger-list");
+        let passengerCount = 2;
+        addPassengerButton.addEventListener("click", function () {
+          if (passengerCount <= 6) {
+            const newPassenger = document.createElement("div");
+            newPassenger.className = "passenger";
+            newPassenger.innerHTML = `
+    <h2>Passenger ${passengerCount}</h2>
+    <label for="full-name">Full Name:</label>
+    <input type="text" name="full-name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+    
+    <label for="phone">Phone:</label>
+    <input type="tel" name="phone" required>
+    <button type="button" class="remove-passenger">Remove</button>
+  `;
+            passengerList.appendChild(newPassenger);
+
+            passengerCount++;
+
+            const removePassengerButtons = newPassenger.querySelectorAll(".remove-passenger");
+            removePassengerButtons.forEach(button => {
+              button.addEventListener("click", function () {
+                passengerList.removeChild(newPassenger);
+                passengerCount--;
+              });
+            });
+          } else {
+            alert("Up to 6 passengers can be reserved at a time to book a flight.");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

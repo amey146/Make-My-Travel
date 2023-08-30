@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Flights
+{% endblock title %}
+
+{% block linker %}
+<link rel="stylesheet" href="/static/css/fstyle.css">
+
+{% endblock linker %}
+
+{% block body %}
+<!-- loading animation -->
+<div id="fill">
+    <div id="loader"></div>
+  </div>
+<div class="fnavbar">
+    <div class="logo">Flight Search</div>
+    <form action="{% url 'flights' %}" method="post" name='myfrom' id='myform'>
+    {% csrf_token %}
+    <div class="search-form">
+        <select class="select-field" name='src' id='src'>
+            {% comment %} <option value="" disabled selected>Source</option> {% endcomment %}
+            <option value="Mumbai" selected>Mumbai</option>
+            <option value="New-Delhi">New-Delhi</option>
+            <option value="Chennai">Chennai</option>
+            <!-- Add more options as needed -->
+          </select>
+          <select class="select-field" name='dstn'>
+            {% comment %} <option value="" disabled selected>Destination</option> {% endcomment %}
+            <option value="London">London</option>
+            <option value="Hong-Kong">Hong-Kong</option>
+            <option value="Tokyo">Tokyo</option>
+            <!-- Add more options as needed -->
+          </select>
+      <input type="date" class="input-field" placeholder="Start Date">
+      <input type="date" class="input-field" placeholder="Return Date">
+      <input type="number" class="input-field" placeholder="Adults" min='1'>
+      <input type="number" class="input-field" placeholder="Child" min='0'>
+      <button class="search-button" onclick="getOption(); submit">Search</button>
+    </div>
+</form>
+  </div>
+<h4 class="p-5">Available Flights</h4>
+<div class="container px-1 text-center">
+    <div class="row gx-5">
+        
+            <!-- One Flight -->
+            {% for data in flight %}
+        <a href="{% url 'fbooking' %}" style="text-decoration: none;">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <!-- Flight data -->
+                        <img src="{{data.ProviderLogo}}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8 m-auto">
+                        <div class="card-body">
+                            <h6 class="card-title">{{data.ProviderName}}</h6>
+                            <h4 class="card-title">₹{{data.eFare}}</h6>
+                            <div class="row">
+                                <div class="col">
+                                    {{data.Source}}
+                                    &nbsp;
+                                    {{data.Date}}
+                                    &nbsp;
+                                    {{data.Time}}
+                                </div>
+                                <div class="col">
+                                    <img src="/static/flight.png" alt="" width="150px">
+                                </div>
+                                <div class="col">
+                                    {{data.Destination}}
+                                    &nbsp;
+                                    {{data.dDate}}
+                                    &nbsp;
+                                    {{data.dTime}}
+                                </div>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Luggage:20kgs | Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+            {% endfor %}
+    </div>
+</div>
+<script>
+    function getOption() { 
+        selectElement = document.querySelector('#src'); 
+                
+        output = 
+        selectElement.options[selectElement.selectedIndex].value; 
+
+        document.querySelector('.output').textContent = output; 
+    } 
+</script>
+{% endblock body%}
