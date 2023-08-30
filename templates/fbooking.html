@@ -1,87 +1,224 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flight Booking</title>
-  <link rel="stylesheet" type="text/css" href="/static/css/fbstyle.css">
-</head>
+{% block title %}
+Flight - Travel and Tour
+{% endblock title %}
 
-<body>
-  <form class="flight-form">
-    <h1>Flight Booking</h1>
-    <div id="passenger-list">
-      <div class="passenger">
-        <label for="full-name">Full Name:</label>
-        <input type="text" name="full-name" required>
+{% block linker %} <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="static/css/fontAwesome.css">
+<link rel="stylesheet" href="static/css/hero-slider.css">
+<link rel="stylesheet" href="static/css/owl-carousel.css">
+<link rel="stylesheet" href="static/css/datepicker.css">
+<link rel="stylesheet" href="static/css/tooplate-style.css">
 
-        <label for="phone">Phone:</label>
-        <input type="tel" name="phone" required>
-      </div>
-    </div>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-    <button type="button" id="add-passenger">Add Passenger</button>
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> {% endblock linker %}
 
-    <label for="departure">Departure Date:</label>
-    <input type="date" name="departure" required>
+{% block body %}
+<!-- loading animation -->
+<div id="fill">
+    <div id="loader"></div>
+  </div>
 
-    <label for="flight-class">Flight Class:</label>
-    <select name="flight-class">
-      <option value="economy">Economy</option>
-      <option value="business">Business</option>
-      <option value="first-class">First Class</option>
-    </select>
 
-    <label for="special-requests">Special Requests:</label>
-    <textarea name="special-requests"></textarea>
 
-    <input type="submit" value="Book Now">
-  </form>
+  <div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.addEventListener("DOMContentLoaded", function () {
-        const addPassengerButton = document.getElementById("add-passenger");
-        const passengerList = document.getElementById("passenger-list");
-        let passengerCount = 2;
-        addPassengerButton.addEventListener("click", function () {
-          if (passengerCount <= 6) {
-            const newPassenger = document.createElement("div");
-            newPassenger.className = "passenger";
-            newPassenger.innerHTML = `
-    <h2>Passenger ${passengerCount}</h2>
-    <label for="full-name">Full Name:</label>
-    <input type="text" name="full-name" required>
-    
-    <label for="email">Email:</label>
-    <input type="email" name="email" required>
-    
-    <label for="phone">Phone:</label>
-    <input type="tel" name="phone" required>
-    <button type="button" class="remove-passenger">Remove</button>
-  `;
-            passengerList.appendChild(newPassenger);
 
-            passengerCount++;
+    <section class="banner" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="left-side">
+                        <div class="logo">
+                            <img src="static/img/logo.png" alt="Flight Template">
+                        </div>
+                        <div class="tabs-content">
+                            <h4>Choose Your Direction:</h4>
+                            
+                        </div>
+                        <div class="page-direction-button">
+                            <a href="contact.html"><i class="fa fa-phone"></i>Contact Us Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <div class="submit-form">
+                                <h4>Check availability for <em>direction</em>:</h4>
+                                <form id="form-submit" action="" method="get">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="from">From:</label>
+                                                <select required name='from' onchange='this.form.()'>
+                                                    <option value="">Select a location...</option>
+                                                    <option value="Cambodia">Cambodia</option>
+                                                    <option value="Hong Kong">Hong Kong</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Korea">Korea</option>
+                                                    <option value="Laos">Laos</option>
+                                                    <option value="Myanmar">Myanmar</option>
+                                                    <option value="Singapore">Singapore</option>
+                                                    <option value="Thailand">Thailand</option>
+                                                    <option value="Vietnam">Vietnam</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="to">To:</label>
+                                                <select required name='to' onchange='this.form.()'>
+                                                    <option value="">Select a location...</option>
+                                                    <option value="Cambodia">Cambodia</option>
+                                                    <option value="Hong Kong">Hong Kong</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Korea">Korea</option>
+                                                    <option value="Laos">Laos</option>
+                                                    <option value="Myanmar">Myanmar</option>
+                                                    <option value="Singapore">Singapore</option>
+                                                    <option value="Thailand">Thailand</option>
+                                                    <option value="Vietnam">Vietnam</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="departure">Departure date:</label>
+                                                <input name="deparure" type="text" class="form-control date"
+                                                    id="deparure" placeholder="Select date..." required=""
+                                                    onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="return">Return date:</label>
+                                                <input name="return" type="text" class="form-control date" id="return"
+                                                    placeholder="Select date..." required="" onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="radio-select">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <label for="round">Round</label>
+                                                        <input type="radio" name="trip" id="round" value="round"
+                                                            required="required" onchange='this.form.()'>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <label for="oneway">Oneway</label>
+                                                        <input type="radio" name="trip" id="oneway" value="one-way"
+                                                            required="required" onchange='this.form.()'>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <button type="submit" id="form-submit" class="btn">Order Ticket
+                                                    Now</button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            const removePassengerButtons = newPassenger.querySelectorAll(".remove-passenger");
-            removePassengerButtons.forEach(button => {
-              button.addEventListener("click", function () {
-                passengerList.removeChild(newPassenger);
-                passengerCount--;
-              });
+
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item first-service">
+                        <div class="service-icon"></div>
+                        <h4>Easy Tooplate</h4>
+                        <p>Donec varius porttitor iaculis. Integer sollicitudin erat et ligula viverra vulputate. In in
+                            quam efficitur, pulvinar justo ut, tempor nunc. Phasellus pharetra quis odio.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item second-service">
+                        <div class="service-icon"></div>
+                        <h4>Unique Ideas</h4>
+                        <p>Cras ligula diam, tristique at aliquam at, fermentum auctor turpis. Proin leo massa, iaculis
+                            elementum massa et, consectetur varius dolor. Fusce sed ipsum sit.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item third-service">
+                        <div class="service-icon"></div>
+                        <h4>Best Support</h4>
+                        <p>Fusce leo dui. Mauris et justo eget arcu ultricies porta. Nulla facilisi. Nulla nec risus sit
+                            amet magna hendrerit venenatis. Sed porta tincidunt lectus eget ultrices.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/datepicker.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+            // navigation click actions 
+            $('.scroll-link').on('click', function (event) {
+                event.preventDefault();
+                var sectionID = $(this).attr("data-id");
+                scrollToID('#' + sectionID, 750);
             });
-          } else {
-            alert("Up to 6 passengers can be reserved at a time to book a flight.");
-          }
+            // scroll to top action
+            $('.scroll-top').on('click', function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+            // mobile nav toggle
+            $('#nav-toggle').on('click', function (event) {
+                event.preventDefault();
+                $('#main-nav').toggleClass("open");
+            });
         });
-      });
-    });
-  </script>
-</body>
-
-</html>
+        // scroll function
+        function scrollToID(id, speed) {
+            var offSet = 0;
+            var targetOffset = $(id).offset().top - offSet;
+            var mainNav = $('#main-nav');
+            $('html,body').animate({ scrollTop: targetOffset }, speed);
+            if (mainNav.hasClass("open")) {
+                mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+                mainNav.removeClass("open");
+            }
+        }
+        if (typeof console === "undefined") {
+            console = {
+                log: function () { }
+            };
+        }
+    </script>
+</div>
+{% endblock body %}
