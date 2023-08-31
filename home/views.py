@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from home.models import Flight, Home, Itinerary, ItineraryDay
+from home.models import Flight, Home, Itinerary, ItineraryDay, Places
 
 # Create your views here.
 
@@ -55,10 +55,11 @@ def flights(request):
         
     dstn = request.session['sessiondest']
     flight = Flight.objects.filter(Source__iexact=src, Destination__iexact=dstn).order_by('eFare').values()
-
+    place = Places.objects.all()
     context = {
         'src':src,
         'dstn':dstn,
+        'place':place,
         'flight':flight
     }
     return render(request, 'flights.html', context)

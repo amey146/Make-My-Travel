@@ -41,4 +41,5 @@ class ItineraryDay(models.Model):
     def __str__(self):
         return f"{self.DestinationName} - {self.Title}"
 
-    
+class Places(models.Model):
+    placename = models.CharField(max_length=30)
