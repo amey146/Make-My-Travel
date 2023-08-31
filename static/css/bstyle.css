@@ -1,3 +1,8 @@
+nav{
+  margin-bottom: 10px;
+  border-bottom: 5px solid beige;
+  border-radius: 7px;
+}
 .nav-link {
     transition: all .4s ease-in-out;
     border-radius: 12px;
@@ -36,31 +41,6 @@
     -ms-user-select: none;
     user-select: none;
   }
-  /* body{
-    zoom: 90%;
-  } */
-  /* html {
-    width: 100%;
-    height: 100%;
-    perspective: 900;
-    overflow-y: scroll;
-    background-color: #dce7eb;
-    font-family: "Titillium Web", sans-serif;
-    color: rgba(48, 69, 92, 0.8);
-  } */
-  
-  /* body {
-    min-height: 0;
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    margin: 90px 0;
-    transform: translate(-50%, 0);
-    box-shadow: 0 10px 0 0 #ff6873 inset;
-    background-color: #fefffa;
-    max-width: 450px;
-    padding: 30px;
-  } */
   .accord{
     padding: 50px;
   }

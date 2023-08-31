@@ -1,22 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Flight - Travel and Tour
+Flight Booking Form
 {% endblock title %}
 
-{% block linker %} <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<link rel="stylesheet" href="static/css/bootstrap.min.css">
-<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="static/css/fontAwesome.css">
-<link rel="stylesheet" href="static/css/hero-slider.css">
-<link rel="stylesheet" href="static/css/owl-carousel.css">
-<link rel="stylesheet" href="static/css/datepicker.css">
-<link rel="stylesheet" href="static/css/tooplate-style.css">
-
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
-<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> {% endblock linker %}
+{% block linker %}
+<link rel="stylesheet" href="static/css/style.css">
+{% endblock linker %}%}
 
 {% block body %}
 <!-- loading animation -->
@@ -24,201 +14,144 @@ Flight - Travel and Tour
     <div id="loader"></div>
   </div>
 
-
-
-  <div>
-
-
-    <section class="banner" id="top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="left-side">
-                        <div class="logo">
-                            <img src="static/img/logo.png" alt="Flight Template">
-                        </div>
-                        <div class="tabs-content">
-                            <h4>Choose Your Direction:</h4>
-                            
-                        </div>
-                        <div class="page-direction-button">
-                            <a href="contact.html"><i class="fa fa-phone"></i>Contact Us Now</a>
-                        </div>
-                    </div>
+  <div class="booking-form-w3layouts">
+    <!-- Form starts here -->
+    <form action="#" method="post">
+       <h3 class="sub-heading-agileits">Booking Details</h3>
+       <div class="main-flex-w3ls-sectns">
+          <div class="field-agileinfo-spc form-w3-agile-text1">
+             <select class="form-control">
+                <option>From</option>
+                <option value="Lorem Ipsum">Lorem Ipsum</option>
+                <option value="Adipiscing">Adipiscing</option>
+                <option value="Lorem Ipsum">Lorem Ipsum</option>
+                <option value="Adipiscing">Adipiscing</option>
+                <option value="Lorem Ipsum">Lorem Ipsum</option>
+                <option value="Adipiscing">Adipiscing</option>
+             </select>
+          </div>
+          <div class="field-agileinfo-spc form-w3-agile-text2">
+             <select class="form-control">
+                <option>To</option>
+                <option value="Lorem Ipsum">Lorem Ipsum</option>
+                <option value="Adipiscing">Adipiscing</option>
+                <option value="Lorem Ipsum">Lorem Ipsum</option>
+                <option value="Adipiscing">Adipiscing</option>
+                <option value="Lorem Ipsum">Lorem Ipsum</option>
+                <option value="Adipiscing">Adipiscing</option>
+             </select>
+          </div>
+       </div>
+       <div class="main-flex-w3ls-sectns">
+          <div class="field-agileinfo-spc form-w3-agile-text1">
+             <select class="form-control">
+                <option>Preferred Airline</option>
+                <option value="American Airline">American Airline</option>
+                <option value="Delta Airlines">Delta Airlines</option>
+                <option value="Frontier Airline">Frontier Airline</option>
+                <option value="Jet Blue">Jet Blue</option>
+                <option value="Southwest Airlines">Southwest Airlines</option>
+             </select>
+          </div>
+          <div class="field-agileinfo-spc form-w3-agile-text2">
+             <select class="form-control">
+                <option>Preferred Seating</option>
+                <option value="Window">Window</option>
+                <option value="Aisle">Aisle</option>
+                <option value="Special">Special (Request note below)</option>
+             </select>
+          </div>
+       </div>
+       <div class="main-flex-w3ls-sectns">
+          <div class="field-agileinfo-spc form-w3-agile-text1">
+             <input id="datepicker" name="Text" type="text" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="" class="hasDatepicker">
+          </div>
+          <div class="field-agileinfo-spc form-w3-agile-text2">
+             <input type="text" id="timepicker" name="Time" class="timepicker form-control hasWickedpicker" placeholder="Departure Time" value="" onkeypress="return false;">
+          </div>
+       </div>
+       <div class="triple-wthree">
+          <div class="field-agileinfo-spc form-w3-agile-text11">
+             <select class="form-control">
+                <option value="">Adult(12+ Yrs)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+             </select>
+          </div>
+          <div class="field-agileinfo-spc form-w3-agile-text22">
+             <select class="form-control">
+                <option value="">Children(2-11 Yrs)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+             </select>
+          </div>
+          <div class="field-agileinfo-spc form-w3-agile-text33">
+             <select class="form-control">
+                <option value="">Infant(under 2Yrs)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+             </select>
+          </div>
+       </div>
+       <div class="radio-section">
+          <h6>Select your Fare</h6>
+          <ul class="radio-buttons-w3-agileits">
+             <li>
+                <input type="radio" id="a-option" name="selector1">
+                <label for="a-option">One Way</label>
+                <div class="check"></div>
+             </li>
+             <li>
+                <input type="radio" id="b-option" name="selector1">
+                <label for="b-option">Round-Trip</label>
+                <div class="check">
+                   <div class="inside"></div>
                 </div>
-                <div class="col-md-5 col-md-offset-1">
-                    <section id="first-tab-group" class="tabgroup">
-                        <div id="tab1">
-                            <div class="submit-form">
-                                <h4>Check availability for <em>direction</em>:</h4>
-                                <form id="form-submit" action="" method="get">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <fieldset>
-                                                <label for="from">From:</label>
-                                                <select required name='from' onchange='this.form.()'>
-                                                    <option value="">Select a location...</option>
-                                                    <option value="Cambodia">Cambodia</option>
-                                                    <option value="Hong Kong">Hong Kong</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Korea">Korea</option>
-                                                    <option value="Laos">Laos</option>
-                                                    <option value="Myanmar">Myanmar</option>
-                                                    <option value="Singapore">Singapore</option>
-                                                    <option value="Thailand">Thailand</option>
-                                                    <option value="Vietnam">Vietnam</option>
-                                                </select>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <fieldset>
-                                                <label for="to">To:</label>
-                                                <select required name='to' onchange='this.form.()'>
-                                                    <option value="">Select a location...</option>
-                                                    <option value="Cambodia">Cambodia</option>
-                                                    <option value="Hong Kong">Hong Kong</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Korea">Korea</option>
-                                                    <option value="Laos">Laos</option>
-                                                    <option value="Myanmar">Myanmar</option>
-                                                    <option value="Singapore">Singapore</option>
-                                                    <option value="Thailand">Thailand</option>
-                                                    <option value="Vietnam">Vietnam</option>
-                                                </select>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <fieldset>
-                                                <label for="departure">Departure date:</label>
-                                                <input name="deparure" type="text" class="form-control date"
-                                                    id="deparure" placeholder="Select date..." required=""
-                                                    onchange='this.form.()'>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <fieldset>
-                                                <label for="return">Return date:</label>
-                                                <input name="return" type="text" class="form-control date" id="return"
-                                                    placeholder="Select date..." required="" onchange='this.form.()'>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="radio-select">
-                                                <div class="row">
-                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="round">Round</label>
-                                                        <input type="radio" name="trip" id="round" value="round"
-                                                            required="required" onchange='this.form.()'>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                        <label for="oneway">Oneway</label>
-                                                        <input type="radio" name="trip" id="oneway" value="one-way"
-                                                            required="required" onchange='this.form.()'>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <fieldset>
-                                                <button type="submit" id="form-submit" class="btn">Order Ticket
-                                                    Now</button>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </section>
+             </li>
+          </ul>
+          <div class="clear"></div>
+       </div>
+       <div class="main-flex-w3ls-sectns">
+          <div class="field-agileinfo-spc form-w3-agile-text1">
+             <input id="datepicker1" name="Text" type="text" placeholder="Return Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="" class="hasDatepicker">
+          </div>
+          <div class="field-agileinfo-spc form-w3-agile-text2">
+             <input type="text" id="timepicker1" name="Time" class="timepicker form-control hasWickedpicker" placeholder="Return Time" value="" onkeypress="return false;">
+          </div>
+       </div>
+       <div class="field-agileinfo-spc form-w3-agile-text">
+          <textarea name="Message" placeholder="Any Message..."></textarea>
+       </div>
+       <h3 class="sub-heading-agileits">Personal Details</h3>
+       <div class="main-flex-w3ls-sectns">
+          <div class="field-agileinfo-spc form-w3-agile-text1">
+             <input type="text" name="Name" placeholder="Full Name" required="">
+          </div>
+          <div class="field-agileinfo-spc form-w3-agile-text2">
+             <input type="text" name="Phone no" placeholder="Phone Number" required="">
+          </div>
+       </div>
+       <div class="field-agileinfo-spc form-w3-agile-text">
+          <input type="email" name="Email" placeholder="Email" required="">
+       </div>
+       <div class="clear"></div>
+       <input type="submit" value="Submit">
+       <input type="reset" value="Clear Form">
+       <div class="clear"></div>
+    </form>
+    <!--// Form starts here -->
+ </div>
 
-
-    <section class="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="service-item first-service">
-                        <div class="service-icon"></div>
-                        <h4>Easy Tooplate</h4>
-                        <p>Donec varius porttitor iaculis. Integer sollicitudin erat et ligula viverra vulputate. In in
-                            quam efficitur, pulvinar justo ut, tempor nunc. Phasellus pharetra quis odio.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-item second-service">
-                        <div class="service-icon"></div>
-                        <h4>Unique Ideas</h4>
-                        <p>Cras ligula diam, tristique at aliquam at, fermentum auctor turpis. Proin leo massa, iaculis
-                            elementum massa et, consectetur varius dolor. Fusce sed ipsum sit.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-item third-service">
-                        <div class="service-icon"></div>
-                        <h4>Best Support</h4>
-                        <p>Fusce leo dui. Mauris et justo eget arcu ultricies porta. Nulla facilisi. Nulla nec risus sit
-                            amet magna hendrerit venenatis. Sed porta tincidunt lectus eget ultrices.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-    <script src="js/vendor/bootstrap.min.js"></script>
-
-    <script src="js/datepicker.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-
-
-            // navigation click actions 
-            $('.scroll-link').on('click', function (event) {
-                event.preventDefault();
-                var sectionID = $(this).attr("data-id");
-                scrollToID('#' + sectionID, 750);
-            });
-            // scroll to top action
-            $('.scroll-top').on('click', function (event) {
-                event.preventDefault();
-                $('html, body').animate({ scrollTop: 0 }, 'slow');
-            });
-            // mobile nav toggle
-            $('#nav-toggle').on('click', function (event) {
-                event.preventDefault();
-                $('#main-nav').toggleClass("open");
-            });
-        });
-        // scroll function
-        function scrollToID(id, speed) {
-            var offSet = 0;
-            var targetOffset = $(id).offset().top - offSet;
-            var mainNav = $('#main-nav');
-            $('html,body').animate({ scrollTop: targetOffset }, speed);
-            if (mainNav.hasClass("open")) {
-                mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-                mainNav.removeClass("open");
-            }
-        }
-        if (typeof console === "undefined") {
-            console = {
-                log: function () { }
-            };
-        }
-    </script>
-</div>
 {% endblock body %}
+
+   
+

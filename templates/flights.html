@@ -20,17 +20,15 @@ Flights
     {% csrf_token %}
     <div class="search-form">
         <select class="select-field" name='src' id='src'>
-            {% comment %} <option value="" disabled selected>Source</option> {% endcomment %}
-            <option value="Mumbai" selected>Mumbai</option>
-            <option value="New-Delhi">New-Delhi</option>
-            <option value="Chennai">Chennai</option>
+            <option value="Mumbai" {% if src == 'Mumbai' %}selected{% endif %}>Mumabi</option>
+            <option value="New-Delhi" {% if src == 'New-Delhi' %}selected{% endif %}>New-Delhi</option>
+            <option value="Chennai" {% if src == 'Chennai' %}selected{% endif %}>Chennai</option>
             <!-- Add more options as needed -->
           </select>
           <select class="select-field" name='dstn'>
-            {% comment %} <option value="" disabled selected>Destination</option> {% endcomment %}
-            <option value="London">London</option>
-            <option value="Hong-Kong">Hong-Kong</option>
-            <option value="Tokyo">Tokyo</option>
+            <option value="London" {% if dstn == 'London' %}selected{% endif %}>London</option>
+            <option value="Hong-Kong" {% if dstn == 'Hong-Kong' %}selected{% endif %} >Hong-Kong</option>
+            <option value="Tokyo" {% if dstn == 'Tokyo' %}selected{% endif %} >Tokyo</option>
             <!-- Add more options as needed -->
           </select>
       <input type="date" class="input-field" placeholder="Start Date">
